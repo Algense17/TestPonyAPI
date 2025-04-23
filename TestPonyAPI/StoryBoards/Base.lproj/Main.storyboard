@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6z-9x-hDo">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My little pony-->
+        <scene sceneID="hGj-yz-mwW">
+            <objects>
+                <collectionViewController id="HOJ-jj-PUv" customClass="PonyViewController" customModule="TestPonyAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nti-Ht-atU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87089830636978149" green="0.90902048349380493" blue="0.47655767202377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="YvJ-87-E0v">
+                            <size key="itemSize" width="145" height="191"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="character" id="bIf-jA-aOg" customClass="PonyCollectionViewCell" customModule="TestPonyAPI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="145" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zep-VP-cYG" customClass="PonyCollectionViewCell" customModule="TestPonyAPI" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="191"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ohm-Mq-Zfo">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="kyG-Pi-YvD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-y6-oqK">
+                                            <rect key="frame" x="0.0" y="150" width="145" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ohm-Mq-Zfo" firstAttribute="leading" secondItem="zep-VP-cYG" secondAttribute="leading" id="BqM-m8-xH7"/>
+                                        <constraint firstItem="UdA-y6-oqK" firstAttribute="leading" secondItem="zep-VP-cYG" secondAttribute="leading" id="Eba-6M-itI"/>
+                                        <constraint firstItem="UdA-y6-oqK" firstAttribute="leading" secondItem="zep-VP-cYG" secondAttribute="leading" id="KWg-gg-hYU"/>
+                                        <constraint firstAttribute="trailing" secondItem="UdA-y6-oqK" secondAttribute="trailing" id="Qkl-bg-ZOL"/>
+                                        <constraint firstItem="Ohm-Mq-Zfo" firstAttribute="top" secondItem="zep-VP-cYG" secondAttribute="top" id="R3T-B7-QGH"/>
+                                        <constraint firstItem="UdA-y6-oqK" firstAttribute="leading" secondItem="zep-VP-cYG" secondAttribute="leading" id="hn3-lx-koD"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ohm-Mq-Zfo" secondAttribute="trailing" id="lrT-2D-gjs"/>
+                                        <constraint firstAttribute="trailing" secondItem="UdA-y6-oqK" secondAttribute="trailing" id="qM3-it-7d0"/>
+                                        <constraint firstAttribute="trailing" secondItem="UdA-y6-oqK" secondAttribute="trailing" id="tG2-dL-3i5"/>
+                                        <constraint firstItem="UdA-y6-oqK" firstAttribute="top" secondItem="Ohm-Mq-Zfo" secondAttribute="bottom" id="xzZ-dg-ehB"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="ponyImageView" destination="Ohm-Mq-Zfo" id="LXn-5g-6YY"/>
+                                    <outlet property="ponyTtileLabel" destination="UdA-y6-oqK" id="e08-6d-SAE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="HOJ-jj-PUv" id="pOv-kK-2ac"/>
+                            <outlet property="delegate" destination="HOJ-jj-PUv" id="LMS-iW-1O4"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="My little pony" id="vZS-ys-vGY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="gjo-lt-L4T">
+                            <connections>
+                                <action selector="clearCache:" destination="HOJ-jj-PUv" id="Oih-Im-2WM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WW-Gb-Pq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.2977099236641" y="-36.619718309859159"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dc2-Rk-JDh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I6z-9x-hDo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8v8-BT-fdR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HOJ-jj-PUv" kind="relationship" relationship="rootViewController" id="4BG-aQ-bB1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OpV-HE-LgF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.58015267175573" y="-36.619718309859159"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
+    </resources>
+</document>
