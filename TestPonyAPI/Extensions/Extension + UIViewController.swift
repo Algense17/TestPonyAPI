@@ -49,6 +49,5 @@ extension UICollectionView {
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
         
-        
     }
 }

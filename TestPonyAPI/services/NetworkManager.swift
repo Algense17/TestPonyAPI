@@ -39,22 +39,6 @@ final class NetworkManager {
         configureURLCache()
     }
     
-//    func fenchData(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//            guard let data else {
-//                print(error?.localizedDescription ?? "No error description")
-//                DispatchQueue.main.async {
-//                    completion(.failure(.noData))
-//                }
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                completion(.success(data))
-//            }
-//        }.resume()
-//    }
-    
     func fetchData(from url: URL, completion: @escaping(Result<[Character], NetworkError>) -> Void) {
         session.dataTask(with: url) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {

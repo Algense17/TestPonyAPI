@@ -39,7 +39,6 @@ final class PonyCollectionViewCell: UICollectionViewCell {
             ponyTtileLabel.text = pony.name
 
             guard let imageURLString = pony.image.first, let imageURL = URL(string: imageURLString) else { return }
-
             if let cachedImage = ImageCache.shared.object(forKey: NSString(string: imageURLString)) {
                 ponyImageView.image = cachedImage
                 activityIndicator?.stopAnimating()
@@ -61,8 +60,6 @@ final class PonyCollectionViewCell: UICollectionViewCell {
             }
         }
 
-    
-    
     private func showSpinner(in view: UIView) -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.color = .white

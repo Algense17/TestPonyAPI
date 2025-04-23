@@ -22,7 +22,6 @@ class PonyViewController: UICollectionViewController {
             andcolor: .blue
         )
         fetchPonys()
-        
     }
     
     // MARK: UICollectionViewDataSource
