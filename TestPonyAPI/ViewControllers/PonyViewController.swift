@@ -11,7 +11,7 @@ private let reuseIdentifier = "Cell"
 
 final class PonyViewController: UICollectionViewController {
     
-    var ponys: [Character] = []
+    private var ponys: [Character] = []
     private var networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
