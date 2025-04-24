@@ -9,18 +9,13 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PonyViewController: UICollectionViewController {
+final class PonyViewController: UICollectionViewController {
     
     var ponys: [Character] = []
     private var networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showUnavailableMessage(
-            "Waiting for responce",
-            withConfig: .loading(),
-            andcolor: .blue
-        )
         fetchPonys()
     }
     

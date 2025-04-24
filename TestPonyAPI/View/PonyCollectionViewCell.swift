@@ -15,6 +15,7 @@ final class PonyCollectionViewCell: UICollectionViewCell {
     @IBOutlet var ponyImageView: UIImageView! {
         didSet {
             ponyImageView.layer.cornerRadius = 5
+            activityIndicator = showSpinner(in: ponyImageView)
         }
     }
     
@@ -24,7 +25,6 @@ final class PonyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        activityIndicator = showSpinner(in: ponyImageView)
     }
     
     override func prepareForReuse() {
